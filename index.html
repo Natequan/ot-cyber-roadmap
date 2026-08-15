@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Interactive mechatronics-to-OT-cybersecurity learning roadmap and portfolio tracker." />
+  <meta name="theme-color" content="#08111f" />
+  <title>Forge // Mechatronics → OT Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">F</div>
+        <div>
+          <div class="brand-title">FORGE</div>
+          <div class="brand-sub">OT CAREER OS</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav-item active" data-view="dashboard"><span>⌁</span> Dashboard</button>
+        <button class="nav-item" data-view="calendar"><span>▦</span> Calendar</button>
+        <button class="nav-item" data-view="learn"><span>◎</span> Learn</button>
+        <button class="nav-item" data-view="projects"><span>◇</span> Projects</button>
+        <button class="nav-item" data-view="github"><span>⌘</span> GitHub Sync</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="tiny-label">LONG-TERM TARGET</div>
+        <div class="target-card">
+          <strong>$200K+</strong>
+          <span>Total compensation</span>
+        </div>
+        <div class="tiny-label">WEEKLY CAPACITY</div>
+        <div class="capacity"><span style="width:70%"></span></div>
+        <small>5–10 focused hours</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div>
+          <div class="eyebrow" id="todayLabel">CAREER ROADMAP</div>
+          <h1 id="viewTitle">Dashboard</h1>
+        </div>
+        <div class="top-actions">
+          <button class="ghost-btn" id="jumpToday">Jump to current week</button>
+          <button class="accent-btn" id="quickReport">Weekly report</button>
+        </div>
+      </header>
+
+      <section id="dashboard" class="view active"></section>
+      <section id="calendar" class="view"></section>
+      <section id="learn" class="view"></section>
+      <section id="projects" class="view"></section>
+      <section id="github" class="view"></section>
+    </main>
+  </div>
+
+  <dialog id="weekDialog" class="modal">
+    <form method="dialog" class="modal-inner">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div id="weekDialogContent"></div>
+    </form>
+  </dialog>
+
+  <dialog id="reportDialog" class="modal wide">
+    <form method="dialog" class="modal-inner">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div id="reportDialogContent"></div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/roadmap.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
