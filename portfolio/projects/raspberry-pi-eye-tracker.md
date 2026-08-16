@@ -36,18 +36,18 @@ The implementation documented from the submitted Python source contains these ma
 
 ### Data flow
 
-1. **GC0308 camera → Raspberry Pi**: capture an eye image frame.
+1. **GC0308 camera → Raspberry Pi 4B**: capture an eye image frame.
 2. **OpenCV processing**: enhance the frame and segment dark pupil candidates.
 3. **Contour validation**: reject candidates that do not satisfy geometry/area rules.
 4. **Coordinate smoothing**: normalize and smooth the selected pupil center.
 5. **UDP → laptop**: send `X:<value>,Y:<value>` gaze coordinates.
 6. **Laptop application**: calibration / virtual-keyboard logic maps gaze to letters.
-7. **UDP feedback → Raspberry Pi**: messages such as `LETRA:`, `CALIBRANDO:`, `BORRAR`, `LIMPIAR` and `ESPACIO` update the local state.
+7. **UDP feedback → Raspberry Pi 4B**: messages such as `LETRA:`, `CALIBRANDO:`, `BORRAR`, `LIMPIAR` and `ESPACIO` update the local state.
 8. **OLED feedback**: show current letter, word buffer, tracking coordinates or calibration status.
 
 ## Hardware represented by the course artifacts
 
-- Raspberry Pi platform
+- **Raspberry Pi 4 Model B**
 - GC0308 camera module
 - 0.96-inch 128×64 OLED
 - jumper wiring
@@ -56,7 +56,7 @@ The implementation documented from the submitted Python source contains these ma
 
 ### Raspberry Pi model note
 
-Earlier course documentation and slides referenced a **Raspberry Pi 4 Model B** during planning and implementation descriptions. Gabriel reports that the final Python eye-tracker implementation was run on a **Raspberry Pi 5**. The portfolio therefore avoids using the board generation as a performance claim and records the implementation as a Raspberry Pi computer-vision system, with Pi 5 noted as the final board used by the developer.
+The project used a **Raspberry Pi 4 Model B**. The earlier mention of Raspberry Pi 5 in the portfolio was incorrect and has been removed; Pi 5 belongs to a different future project idea and is not part of this eye-tracker implementation.
 
 ## Detection pipeline
 
@@ -128,7 +128,7 @@ The project artifacts show a functional wearable prototype and report that the e
 - Python
 - OpenCV
 - NumPy
-- Raspberry Pi / embedded Linux
+- Raspberry Pi 4B / embedded Linux
 - Computer vision
 - Image preprocessing
 - Contour analysis
