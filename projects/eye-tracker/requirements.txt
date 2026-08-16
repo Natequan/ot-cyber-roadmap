@@ -1,0 +1,14 @@
+# Core
+numpy>=1.24
+opencv-python>=4.8
+
+# Optional smoothing
+filterpy>=1.4.5
+
+# Optional OLED support on Raspberry Pi
+Pillow>=10.0
+adafruit-blinka>=8.0
+adafruit-circuitpython-ssd1306>=2.12
+
+# Note: on Raspberry Pi OS, OpenCV may also be installed from apt
+# (python3-opencv) instead of the PyPI wheel depending on your setup.
