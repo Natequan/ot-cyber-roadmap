@@ -4,6 +4,53 @@ window.PORTFOLIO_DATA = {
     headline: 'Mechatronics Engineer in Training · Industrial Automation · OT / Embedded Security',
     summary: 'Building a portfolio around PLCs, industrial networks, embedded systems, electronics and cybersecurity. Each entry is based on real university or personal work and is documented without overstating individual contribution.'
   },
+  experience: [
+    {
+      id: 'intro-networks-lab-01',
+      index: '01',
+      date: '2026-02',
+      title: 'Physical Media, Structured Cabling & Fiber',
+      type: 'Introduction to Networks · Laboratory',
+      short: 'Worked with Layer 1 networking concepts through twisted-pair Ethernet, RJ45 termination standards and supervised optical-fiber handling.',
+      skills: ['Layer 1','TIA/EIA-568','RJ45','Twisted pair','Fiber optics','IEEE 802.3'],
+      bullets: [
+        'Reviewed twisted-pair Ethernet media and the TIA/EIA-568 color code for straight-through and crossover cabling.',
+        'Prepared / terminated copper Ethernet cabling during the laboratory exercise.',
+        'Used optical-fiber lab equipment to join fiber, with report evidence showing an optical fiber fusion splicer in use.'
+      ],
+      source: 'portfolio/experience/introduction-to-networks-labs.md'
+    },
+    {
+      id: 'intro-networks-lab-02',
+      index: '02',
+      date: '2026-02',
+      title: 'Basic LAN, Switch Access, MAC Tables & ARP',
+      type: 'Introduction to Networks · Laboratory',
+      short: 'Configured and verified a small LAN using Cisco equipment, PuTTY console access, MAC-table inspection and end-device communication.',
+      skills: ['Cisco CLI','LAN','MAC table','ARP','IPv4','PuTTY'],
+      bullets: [
+        'Accessed Cisco switches / routers from a laptop through PuTTY over a COM connection and performed basic device configuration.',
+        'Changed switch hostnames and inspected the switch MAC-address table.',
+        'Interconnected two computers, verified communication and reinforced ARP as the IPv4-to-MAC resolution mechanism inside a LAN.'
+      ],
+      source: 'portfolio/experience/introduction-to-networks-labs.md'
+    },
+    {
+      id: 'intro-networks-lab-03',
+      index: '03',
+      date: '2026-02',
+      title: 'DHCP Server, Relay, Client & Routed Connectivity',
+      type: 'Introduction to Networks · Laboratory',
+      short: 'Configured multi-network connectivity with Cisco routers while practicing DHCP server, relay and client roles plus basic routing and verification.',
+      skills: ['DHCP','DHCP Relay','ip helper-address','Subnetting','Routing','Ping'],
+      bullets: [
+        'Created multiple IPv4 subnets, connected two routers through an inter-router network and configured connectivity between networks.',
+        'Practiced DHCP server, relay and client behavior, including excluded addresses, helper addressing and dynamic interface addressing.',
+        'Verified end-to-end connectivity with ping and reinforced the DHCP Discover / Offer / Request / Acknowledge exchange.'
+      ],
+      source: 'portfolio/experience/introduction-to-networks-labs.md'
+    }
+  ],
   caseStudies: [
     {
       id: 'raspberry-pi-eye-tracker',
