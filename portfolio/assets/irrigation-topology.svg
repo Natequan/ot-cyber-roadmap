@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">IoT irrigation control architecture</title>
+  <desc id="desc">A capacitive soil-moisture sensor feeds an ESP32-S3 controller. The controller exchanges telemetry and setpoints with a phone or tablet and drives an isolated MOC3021 and BTA12-600B power stage controlling the irrigation pump.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#120d18"/><stop offset="1" stop-color="#09070d"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#c8a4ff"/><stop offset="1" stop-color="#f2a8d8"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c8a4ff"/></marker>
+  </defs>
+  <rect width="1200" height="620" rx="28" fill="url(#bg)"/>
+  <text x="58" y="62" fill="#f5eefd" font-family="system-ui,sans-serif" font-size="28" font-weight="700">IoT Irrigation + Power Electronics</text>
+  <text x="58" y="94" fill="#9e91a6" font-family="system-ui,sans-serif" font-size="16">Moisture sensing → embedded control → isolated AC power stage → variable irrigation</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="55" y="185" width="230" height="158" rx="20" fill="#17111e" stroke="#60476d"/>
+    <text x="82" y="228" fill="#f2a8d8" font-size="14" font-weight="700">SENSING</text>
+    <text x="82" y="266" fill="#f5eefd" font-size="22" font-weight="700">Capacitive Sensor</text>
+    <text x="82" y="298" fill="#b8aabc" font-size="16">Soil moisture input</text>
+    <text x="82" y="324" fill="#b8aabc" font-size="16">Real-time process variable</text>
+    <rect x="375" y="165" width="250" height="198" rx="20" fill="#17111e" stroke="#60476d"/>
+    <text x="402" y="208" fill="#c8a4ff" font-size="14" font-weight="700">CONTROLLER</text>
+    <text x="402" y="246" fill="#f5eefd" font-size="24" font-weight="700">ESP32-S3</text>
+    <text x="402" y="278" fill="#b8aabc" font-size="16">Moisture evaluation</text>
+    <text x="402" y="304" fill="#b8aabc" font-size="16">Variable pump command</text>
+    <text x="402" y="330" fill="#b8aabc" font-size="16">Wi-Fi / IoT telemetry</text>
+    <rect x="715" y="165" width="250" height="198" rx="20" fill="#17111e" stroke="#60476d"/>
+    <text x="742" y="208" fill="#f2a8d8" font-size="14" font-weight="700">POWER STAGE</text>
+    <text x="742" y="246" fill="#f5eefd" font-size="22" font-weight="700">MOC3021 + BTA12</text>
+    <text x="742" y="278" fill="#b8aabc" font-size="16">Optically isolated control</text>
+    <text x="742" y="304" fill="#b8aabc" font-size="16">AC load modulation stage</text>
+    <text x="742" y="330" fill="#b8aabc" font-size="16">Proteus design evidence</text>
+    <rect x="1010" y="185" width="150" height="158" rx="20" fill="#17111e" stroke="#60476d"/>
+    <text x="1034" y="228" fill="#c8a4ff" font-size="14" font-weight="700">OUTPUT</text>
+    <text x="1034" y="266" fill="#f5eefd" font-size="22" font-weight="700">Pump</text>
+    <text x="1034" y="298" fill="#b8aabc" font-size="16">Water flow</text>
+    <text x="1034" y="324" fill="#b8aabc" font-size="16">→ Sprinkler</text>
+    <rect x="365" y="448" width="270" height="108" rx="18" fill="#100b15" stroke="#4a3754"/>
+    <text x="392" y="486" fill="#f2a8d8" font-size="14" font-weight="700">REMOTE INTERFACE</text>
+    <text x="392" y="520" fill="#f5eefd" font-size="20" font-weight="700">Phone / Tablet</text>
+    <text x="392" y="544" fill="#b8aabc" font-size="15">Live variables + control setpoints</text>
+  </g>
+  <line x1="285" y1="264" x2="365" y2="264" stroke="url(#accent)" stroke-width="5" marker-end="url(#arrow)" filter="url(#glow)"/>
+  <line x1="625" y1="264" x2="705" y2="264" stroke="url(#accent)" stroke-width="5" marker-end="url(#arrow)" filter="url(#glow)"/>
+  <line x1="965" y1="264" x2="1000" y2="264" stroke="url(#accent)" stroke-width="5" marker-end="url(#arrow)" filter="url(#glow)"/>
+  <path d="M500 365 V437" stroke="#f2a8d8" stroke-width="4" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+  <path d="M535 448 V376" stroke="#c8a4ff" stroke-width="4" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+  <text x="647" y="242" fill="#d7cadb" font-family="ui-monospace,monospace" font-size="13">isolated drive</text>
+  <text x="465" y="414" fill="#d7cadb" font-family="ui-monospace,monospace" font-size="13">Wi-Fi / IoT</text>
+</svg>
