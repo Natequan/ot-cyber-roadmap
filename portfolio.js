@@ -8,8 +8,26 @@
   $('#summary').textContent = D.profile.summary;
   $('#stats').innerHTML = `
     <article class="stat reveal"><strong>${D.caseStudies.length}</strong><span>VERIFIED CASE STUDIES</span></article>
+    <article class="stat reveal"><strong>${D.experience?.length || 0}</strong><span>NETWORKING LABS DOCUMENTED</span></article>
     <article class="stat reveal"><strong>${D.backlog.length}</strong><span>PROJECTS IN PIPELINE</span></article>
     <article class="stat reveal"><strong>OT</strong><span>PRIMARY SPECIALIZATION PATH</span></article>`;
+
+  const experienceGrid = $('#experienceGrid');
+  if (experienceGrid && Array.isArray(D.experience)) {
+    experienceGrid.innerHTML = D.experience.map((e,i) => `
+      <article class="experience-card reveal" style="--delay:${i*80}ms">
+        <div class="experience-top">
+          <span class="experience-number">${esc(e.index)}</span>
+          <span class="experience-date">${esc(e.date)}</span>
+        </div>
+        <div class="experience-type">${esc(e.type)}</div>
+        <h3>${esc(e.title)}</h3>
+        <p>${esc(e.short)}</p>
+        <ul class="experience-bullets">${e.bullets.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+        <div class="tags">${e.skills.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}</div>
+        <a class="experience-link" href="https://github.com/Natequan/ot-cyber-roadmap/blob/main/${esc(e.source)}" target="_blank" rel="noopener">Read documented lab series ↗</a>
+      </article>`).join('');
+  }
 
   $('#caseGrid').innerHTML = D.caseStudies.map((c,i) => `
     <article class="case-card reveal" style="--delay:${i*70}ms" data-case="${esc(c.id)}" tabindex="0" role="button" aria-label="Open ${esc(c.title)} case study">
