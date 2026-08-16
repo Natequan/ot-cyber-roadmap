@@ -5,11 +5,27 @@
 **Date:** 2026-08-13  
 **Status:** Verified laboratory result
 
-> This case study is based on a team laboratory report. It documents the verified technical work without claiming that every task was completed individually by Gabriel. Individual contribution can be refined later.
+> This was a collaborative laboratory. The team worked through the complete exercise together rather than splitting it into isolated roles, so Gabriel participated across the setup, PLC configuration/programming, physical connections, register-table lookup, communication validation and troubleshooting described below.
 
 ## Objective
 
 Establish serial communication between a Schneider Electric PowerLogic PM5110 energy meter and a Schneider M221 PLC using **Modbus RTU over RS-485**, then read the PM5110 internal clock registers from the PLC and verify the values in EcoStruxure Machine Expert - Basic.
+
+## Team contribution
+
+The PLC hardware was already available in the laboratory. As a team, the students:
+
+- assigned/configured the laptop network settings needed to work with the lab setup;
+- verified the PLC IP address before programming;
+- connected the laptop to the PLC over USB for engineering/programming access;
+- built the Ladder program containing the communication command block;
+- configured the PLC serial communication for Modbus RTU;
+- connected the RS-485 signals using conductors from an Ethernet cable terminated for the M221 SL1 RJ45 port;
+- consulted Schneider Electric's PM5110 Modbus register table;
+- mapped the clock registers into PLC memory;
+- tested the read operation and corrected the register-address offset until the expected values appeared.
+
+This case study is therefore presented as **team work with full-process participation**, not as a solo project.
 
 ## Architecture
 
@@ -89,12 +105,15 @@ This corresponded to **12/08/2026 19:11:52**.
 - Industrial serial networking
 - RS-485 wiring and signal mapping
 - Modbus RTU master/slave configuration
+- Laptop/PLC engineering connectivity
+- Ladder communication programming
 - Manufacturer register-table interpretation
 - PLC memory mapping
 - Schneider EcoStruxure Machine Expert - Basic
 - `READ_VAR` / Modbus function 0x03
 - Troubleshooting address offsets
 - Validation with PLC animation tables
+- Collaborative industrial-lab execution
 
 ## Why this matters for OT security
 
@@ -103,6 +122,5 @@ This laboratory becomes useful security groundwork because it creates direct fam
 ## Next portfolio upgrades
 
 - Add sanitized screenshots from the original laboratory evidence.
-- Record Gabriel's exact individual contribution to the team lab.
 - Build a read-only Python / PyModbus companion tool against an authorized lab setup.
 - Add a threat model and defensive notes using NIST SP 800-82 / MITRE ATT&CK for ICS concepts later in the roadmap.
