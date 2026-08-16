@@ -100,7 +100,7 @@ The algorithm is deliberately lightweight enough to run at the edge without a la
 
 ## Code review: improvements made for the portfolio version
 
-The original file is preserved as the project evidence. A separate **refactored portfolio version** was created rather than silently replacing the code that was actually submitted.
+The original submitted source was reviewed as evidence but is **not published verbatim** in this public portfolio because it contains machine-specific local configuration. Instead, a separate **refactored portfolio version** preserves the core behavior while making the public code cleaner and safer to reuse.
 
 The refactor adds:
 
