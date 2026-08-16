@@ -84,13 +84,13 @@
       url:'https://fullstackopen.com/en/'
     },
     {
-      id:'polish-resume-unverified',
+      id:'polishme',
       track:'Career',
-      kind:'TikTok Mention',
-      priority:'Needs exact link',
-      title:'“Polish” — AI resume optimizer (exact product not verified yet)',
-      description:'The TikTok describes an AI tool that tailors a resume to a job description, but the screenshot alone is not enough to identify the exact product reliably. Kept here so we do not lose it; we will replace this placeholder only after finding the exact site.',
-      url:'https://vt.tiktok.com/ZSVYupN4P/'
+      kind:'Profile Optimizer',
+      priority:'Later / Career Assets',
+      title:'PolishMe — Resume, GitHub & LinkedIn Optimization',
+      description:'AI career-profile optimizer focused on turning resume, GitHub and LinkedIn into a clearer recruiter-facing story. Keep as a comparison/reference while we manually build and maintain the same fundamentals inside Gabriel’s portfolio workflow.',
+      url:'https://polishme.ai/'
     }
   ];
 
@@ -105,8 +105,9 @@
     if (w.topic === 'Security fundamentals' && !w.resources.includes('90-days-cyber')) {
       w.resources.push('90-days-cyber');
     }
-    if (w.topic === 'Career assets' && !w.resources.includes('roadmap-sh')) {
-      w.resources.push('roadmap-sh');
+    if (w.topic === 'Career assets') {
+      if (!w.resources.includes('roadmap-sh')) w.resources.push('roadmap-sh');
+      if (!w.resources.includes('polishme')) w.resources.push('polishme');
     }
   });
 })();
