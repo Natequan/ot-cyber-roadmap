@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Gabriel Nathan — Mechatronics, industrial automation and OT security portfolio." />
+  <meta name="theme-color" content="#0a0710" />
+  <title>Portfolio — Gabriel Nathan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+  <div class="ambient a"></div><div class="ambient b"></div>
+  <header class="site-head">
+    <a class="brand" href="index.html"><span>✦</span> NOCTURNE</a>
+    <nav><a href="index.html">Study roadmap</a><a href="https://github.com/Natequan/ot-cyber-roadmap" target="_blank" rel="noopener">GitHub ↗</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">PROFESSIONAL PORTFOLIO · BUILDING IN PUBLIC</div>
+      <h1 id="name">Gabriel Nathan</h1>
+      <p class="headline" id="headline"></p>
+      <p class="summary" id="summary"></p>
+      <div class="hero-actions"><a class="primary" href="#case-studies">View case studies</a><a class="secondary" href="index.html">Back to Nocturne</a></div>
+    </section>
+
+    <section class="stats" id="stats"></section>
+
+    <section id="case-studies" class="section">
+      <div class="section-head"><div><span class="eyebrow">VERIFIED WORK</span><h2>Case studies</h2></div><p>Real labs and projects converted into recruiter-readable technical evidence.</p></div>
+      <div class="case-grid" id="caseGrid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><span class="eyebrow">PIPELINE</span><h2>Projects being documented</h2></div><p>These exist already or are active; the portfolio entries will be filled as reports, photos, code and evidence arrive.</p></div>
+      <div class="backlog-grid" id="backlogGrid"></div>
+    </section>
+
+    <footer><span>Gabriel Nathan · Mechatronics → Industrial Automation → OT / Embedded Security</span><a href="index.html">Nocturne roadmap ↗</a></footer>
+  </main>
+
+  <dialog id="caseDialog">
+    <article class="dialog-card"><button class="close" id="closeDialog" aria-label="Close">×</button><div id="dialogContent"></div></article>
+  </dialog>
+
+  <script src="data/portfolio.js"></script>
+  <script src="portfolio.js"></script>
+</body>
+</html>
