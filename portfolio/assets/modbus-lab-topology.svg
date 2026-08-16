@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Modbus RTU laboratory topology</title>
+  <desc id="desc">PowerLogic PM5110 communicates over RS-485 with a Schneider M221 PLC, which stores clock registers in memory and displays them in Machine Expert Basic.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#120d18"/><stop offset="1" stop-color="#09070d"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#c8a4ff"/><stop offset="1" stop-color="#f2a8d8"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c8a4ff"/></marker>
+  </defs>
+  <rect width="1200" height="520" rx="28" fill="url(#bg)"/>
+  <text x="60" y="62" fill="#f5eefd" font-family="system-ui,sans-serif" font-size="28" font-weight="700">Industrial Modbus RTU Lab</text>
+  <text x="60" y="94" fill="#9e91a6" font-family="system-ui,sans-serif" font-size="16">Schneider M221 master ↔ PowerLogic PM5110 slave/server</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="65" y="165" width="250" height="170" rx="20" fill="#17111e" stroke="#60476d"/>
+    <text x="92" y="208" fill="#f2a8d8" font-size="14" font-weight="700">ENERGY METER</text>
+    <text x="92" y="246" fill="#f5eefd" font-size="25" font-weight="700">PowerLogic PM5110</text>
+    <text x="92" y="280" fill="#b8aabc" font-size="16">Modbus address: 1</text>
+    <text x="92" y="306" fill="#b8aabc" font-size="16">19200 bit/s · Even parity</text>
+
+    <rect x="475" y="145" width="250" height="210" rx="20" fill="#17111e" stroke="#60476d"/>
+    <text x="502" y="188" fill="#c8a4ff" font-size="14" font-weight="700">PLC / MASTER</text>
+    <text x="502" y="226" fill="#f5eefd" font-size="25" font-weight="700">Schneider M221</text>
+    <text x="502" y="260" fill="#b8aabc" font-size="16">Serial port: SL1</text>
+    <text x="502" y="286" fill="#b8aabc" font-size="16">READ_VAR · Function 0x03</text>
+    <text x="502" y="312" fill="#b8aabc" font-size="16">7 words → %MW100…%MW106</text>
+
+    <rect x="885" y="165" width="250" height="170" rx="20" fill="#17111e" stroke="#60476d"/>
+    <text x="912" y="208" fill="#f2a8d8" font-size="14" font-weight="700">VERIFICATION</text>
+    <text x="912" y="246" fill="#f5eefd" font-size="23" font-weight="700">Machine Expert - Basic</text>
+    <text x="912" y="280" fill="#b8aabc" font-size="16">Animation table</text>
+    <text x="912" y="306" fill="#b8aabc" font-size="16">Date/time values verified</text>
+  </g>
+
+  <line x1="315" y1="250" x2="465" y2="250" stroke="url(#accent)" stroke-width="5" marker-end="url(#arrow)" filter="url(#glow)"/>
+  <text x="337" y="220" fill="#d7cadb" font-family="ui-monospace,monospace" font-size="14">RS-485</text>
+  <text x="333" y="285" fill="#918494" font-family="ui-monospace,monospace" font-size="13">D1 · D0 · Common</text>
+
+  <line x1="725" y1="250" x2="875" y2="250" stroke="url(#accent)" stroke-width="5" marker-end="url(#arrow)" filter="url(#glow)"/>
+  <text x="752" y="220" fill="#d7cadb" font-family="ui-monospace,monospace" font-size="14">PLC memory</text>
+  <text x="744" y="285" fill="#918494" font-family="ui-monospace,monospace" font-size="13">%MW100…%MW106</text>
+
+  <rect x="313" y="395" width="574" height="72" rx="16" fill="#100b15" stroke="#3c2d45"/>
+  <text x="600" y="425" text-anchor="middle" fill="#f5eefd" font-family="system-ui,sans-serif" font-size="16" font-weight="700">Troubleshooting highlight</text>
+  <text x="600" y="449" text-anchor="middle" fill="#b8aabc" font-family="system-ui,sans-serif" font-size="14">FirstObj 1836 was required to correctly retrieve register-table entry 1837.</text>
+</svg>
