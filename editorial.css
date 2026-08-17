@@ -1,0 +1,186 @@
+/*
+ * Nocturne editorial refresh.
+ * Design language adapted from the principles in cathrynlavery/diagram-design (MIT):
+ * semantic tokens, one focal accent, serif/sans/mono typography, restrained radii,
+ * hairline rules, low visual density and accessible motion.
+ */
+:root{
+  --dd-paper:#0b0910;
+  --dd-paper-2:#121018;
+  --dd-paper-3:#17141d;
+  --dd-ink:#f4f0f5;
+  --dd-muted:#b5adb9;
+  --dd-soft:#817887;
+  --dd-rule:rgba(244,240,245,.12);
+  --dd-rule-strong:rgba(244,240,245,.24);
+  --dd-accent:#e7a2cf;
+  --dd-accent-tint:rgba(231,162,207,.09);
+  --dd-link:#b9a5dc;
+  --dd-serif:'Instrument Serif','Cormorant Garamond',Georgia,serif;
+  --dd-sans:'Geist','Nunito',system-ui,sans-serif;
+  --dd-mono:'Geist Mono','IBM Plex Mono',ui-monospace,monospace;
+  --dd-ease:cubic-bezier(.2,.8,.2,1);
+
+  --bg:var(--dd-paper);
+  --bg-2:var(--dd-paper);
+  --panel:var(--dd-paper-2);
+  --panel-2:var(--dd-paper-2);
+  --panel-3:var(--dd-paper-3);
+  --ink:var(--dd-ink);
+  --soft:var(--dd-muted);
+  --muted:var(--dd-soft);
+  --border:var(--dd-rule);
+  --border-bright:var(--dd-rule-strong);
+  --pink:var(--dd-accent);
+  --violet:var(--dd-accent);
+  --violet-2:#b98bb0;
+  --ice:var(--dd-link);
+  --shadow:none;
+  --radius:8px;
+  --serif:var(--dd-serif);
+  --sans:var(--dd-sans);
+  --mono:var(--dd-mono);
+}
+
+body{
+  background:var(--dd-paper);
+  color:var(--dd-ink);
+  font-family:var(--dd-sans);
+  font-size:17px;
+  line-height:1.65;
+}
+body:before{
+  opacity:.06;
+  background-image:radial-gradient(rgba(244,240,245,.65) .55px,transparent .55px);
+  background-size:22px 22px;
+  mask-image:linear-gradient(to bottom,black,transparent 68%);
+}
+.ambient{display:none}
+
+.sidebar{
+  background:rgba(11,9,16,.94);
+  border-right:1px solid var(--dd-rule);
+  backdrop-filter:blur(14px);
+}
+.brand{gap:11px}
+.brand-mark{
+  width:36px;height:36px;border-radius:6px;
+  border:1px solid var(--dd-rule-strong);
+  background:var(--dd-accent-tint);
+  box-shadow:none;color:var(--dd-accent);font-size:14px;
+}
+.brand-title{font-family:var(--dd-serif);font-size:24px;font-weight:400;letter-spacing:.03em}
+.brand-sub,.tiny-label,.eyebrow,.kicker{font-family:var(--dd-mono)}
+.current-path{
+  border-radius:6px;background:transparent;border-color:var(--dd-rule);padding:14px;
+}
+.current-path strong{font-family:var(--dd-serif);font-weight:400;font-size:18px}
+.nav{gap:2px}
+.nav-item{
+  border-radius:5px;padding:11px 10px;font-size:14px;font-weight:500;
+  transition:background 160ms ease,color 160ms ease,border-color 160ms ease,transform 160ms ease;
+}
+.nav-item:hover{background:rgba(244,240,245,.035);transform:translateX(2px)}
+.nav-item.active{
+  background:var(--dd-accent-tint);border-color:rgba(231,162,207,.32);
+  box-shadow:inset 2px 0 0 var(--dd-accent);color:var(--dd-ink);
+}
+.capacity{height:3px;border-radius:0;background:rgba(244,240,245,.08);border:0}
+.capacity span{background:var(--dd-accent);border-radius:0}
+
+.topbar{
+  background:rgba(11,9,16,.9);border-bottom:1px solid var(--dd-rule);
+  backdrop-filter:blur(14px);height:82px;
+}
+.topbar h1{font-family:var(--dd-serif);font-weight:400;font-size:31px;letter-spacing:-.01em}
+.ghost-btn,.accent-btn,.small-btn,.filter-chip,.icon-btn,.mobile-menu{
+  border-radius:5px;box-shadow:none;font-size:13px;min-height:40px;
+}
+.ghost-btn,.small-btn,.icon-btn,.mobile-menu{background:transparent;border-color:var(--dd-rule-strong)}
+.accent-btn{background:var(--dd-accent);border:1px solid var(--dd-accent);color:#1a1118;box-shadow:none}
+.accent-btn:hover{filter:none;transform:translateY(-1px)}
+
+.card{
+  background:var(--dd-paper-2);border:1px solid var(--dd-rule);border-radius:8px;
+  box-shadow:none;padding:22px;
+}
+.card:hover{border-color:rgba(244,240,245,.18)}
+.section-head h2,.hero h2,.continue-card h3,.week-top h3,.phase-mini h4,.study-intro h2,.course-step h3{
+  font-family:var(--dd-serif);font-weight:400;
+}
+.section-head h2{font-size:28px}
+.section-head p{font-size:14px;line-height:1.6;color:var(--dd-soft)}
+
+.hero{gap:12px}
+.hero-main{min-height:0;padding:32px}
+.hero-main:before,.hero-main:after{display:none}
+.hero h2{font-size:clamp(42px,5vw,66px);line-height:.96;letter-spacing:-.025em;max-width:800px}
+.hero h2 span{background:none;color:var(--dd-ink);-webkit-text-fill-color:initial}
+.hero-copy{font-size:16px;line-height:1.75;color:var(--dd-muted);max-width:760px}
+.pill,.phase-badge,.tag{
+  border-radius:4px;background:transparent;border:1px solid var(--dd-rule-strong);
+  color:var(--dd-muted);font-family:var(--dd-mono);font-size:11px;
+}
+.pill:before{content:'·';color:var(--dd-accent)}
+.progress-ring{background:conic-gradient(var(--dd-accent) var(--progress,0%),rgba(244,240,245,.08) 0);box-shadow:none}
+.progress-ring:after{background:var(--dd-paper-2);border-color:var(--dd-rule)}
+.stat{border-radius:5px;background:transparent;border-color:var(--dd-rule)}
+
+.continue-card{border-left:2px solid var(--dd-accent)}
+.lesson-dot{height:3px;border-radius:0;background:rgba(244,240,245,.08)}
+.lesson-dot.done{background:var(--dd-accent)}
+
+.week-card,.course-step,.phase-mini{border-radius:7px;background:var(--dd-paper-2);box-shadow:none}
+.week-top{border-bottom-color:var(--dd-rule)}
+.task{padding-top:15px;padding-bottom:15px;border-bottom-color:var(--dd-rule)}
+.task-text{font-size:15px;line-height:1.62;color:var(--dd-muted)}
+.hours{font-size:10px;color:var(--dd-soft)}
+.task input,.course-check input{border-radius:3px;background:transparent;border-color:var(--dd-rule-strong)}
+.task input:checked,.course-check input:checked{background:var(--dd-accent);border-color:var(--dd-accent)}
+.deliverable{background:transparent;border-top-color:var(--dd-rule);font-size:14px;color:var(--dd-muted)}
+
+.phase-timeline{gap:6px}
+.phase-mini{min-height:118px}
+.phase-mini.active{background:var(--dd-accent-tint);border-color:rgba(231,162,207,.32)}
+.phase-mini p{font-size:12px;line-height:1.55}
+
+.study-shell{grid-template-columns:minmax(0,1fr) 320px;gap:12px}
+.study-intro{padding:28px}
+.study-intro h2{font-size:40px}
+.study-intro p{font-size:16px;line-height:1.7}
+.course-list{gap:8px}
+.course-step-head{padding:17px 18px}
+.course-num{
+  border-radius:4px;background:transparent;border-color:var(--dd-rule-strong);
+  color:var(--dd-muted);font-size:11px;
+}
+.course-step.complete .course-num{background:var(--dd-accent);color:#1a1118;border-color:var(--dd-accent)}
+.course-step h3{font-size:24px}
+.course-step-head p{font-size:13px;line-height:1.5}
+.course-step-body{padding-bottom:20px}
+.course-step-body h4{font-size:13px;color:var(--dd-muted)}
+.course-step-body li{font-size:14px;line-height:1.65;color:var(--dd-muted)}
+
+/* Beginner walkthrough: clearer editorial hierarchy, fewer decorative containers. */
+.beginner-walkthrough,.walkthrough-shell,.beginner-panel{border-radius:7px!important;box-shadow:none!important}
+.walkthrough-step,.beginner-section,details{border-radius:6px!important}
+
+/* Calendar and resource cards: flat surfaces, restrained accent. */
+.resource,.project-card,.calendar-day,.sync-step,.report-preview,.structure{
+  border-radius:7px!important;box-shadow:none!important;
+}
+.resource:hover,.project-card:hover{transform:translateY(-2px)!important;border-color:var(--dd-rule-strong)!important}
+
+/* Accessible, ordered motion: meaning is complete without motion. */
+.view.active > *{animation:dd-enter 420ms var(--dd-ease) both}
+.nav-item:active,.ghost-btn:active,.accent-btn:active,.small-btn:active{transform:translateY(1px) scale(.985)}
+@keyframes dd-enter{from{opacity:.35;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+@media(max-width:900px){
+  .study-shell{grid-template-columns:1fr}
+  .hero h2{font-size:46px}
+}
+@media(prefers-reduced-motion:reduce){
+  .view.active > *{animation:none!important}
+  .nav-item:hover{transform:none}
+}

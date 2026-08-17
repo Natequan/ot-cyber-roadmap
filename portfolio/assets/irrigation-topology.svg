@@ -1,48 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
-  <title id="title">IoT irrigation control architecture</title>
-  <desc id="desc">A capacitive soil-moisture sensor feeds an ESP32-S3 controller. The controller exchanges telemetry and setpoints with a phone or tablet and drives an isolated MOC3021 and BTA12-600B power stage controlling the irrigation pump.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#120d18"/><stop offset="1" stop-color="#09070d"/></linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#c8a4ff"/><stop offset="1" stop-color="#f2a8d8"/></linearGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#c8a4ff"/></marker>
-  </defs>
-  <rect width="1200" height="620" rx="28" fill="url(#bg)"/>
-  <text x="58" y="62" fill="#f5eefd" font-family="system-ui,sans-serif" font-size="28" font-weight="700">IoT Irrigation + Power Electronics</text>
-  <text x="58" y="94" fill="#9e91a6" font-family="system-ui,sans-serif" font-size="16">Moisture sensing → embedded control → isolated AC power stage → variable irrigation</text>
-  <g font-family="system-ui,sans-serif">
-    <rect x="55" y="185" width="230" height="158" rx="20" fill="#17111e" stroke="#60476d"/>
-    <text x="82" y="228" fill="#f2a8d8" font-size="14" font-weight="700">SENSING</text>
-    <text x="82" y="266" fill="#f5eefd" font-size="22" font-weight="700">Capacitive Sensor</text>
-    <text x="82" y="298" fill="#b8aabc" font-size="16">Soil moisture input</text>
-    <text x="82" y="324" fill="#b8aabc" font-size="16">Real-time process variable</text>
-    <rect x="375" y="165" width="250" height="198" rx="20" fill="#17111e" stroke="#60476d"/>
-    <text x="402" y="208" fill="#c8a4ff" font-size="14" font-weight="700">CONTROLLER</text>
-    <text x="402" y="246" fill="#f5eefd" font-size="24" font-weight="700">ESP32-S3</text>
-    <text x="402" y="278" fill="#b8aabc" font-size="16">Moisture evaluation</text>
-    <text x="402" y="304" fill="#b8aabc" font-size="16">Variable pump command</text>
-    <text x="402" y="330" fill="#b8aabc" font-size="16">Wi-Fi / IoT telemetry</text>
-    <rect x="715" y="165" width="250" height="198" rx="20" fill="#17111e" stroke="#60476d"/>
-    <text x="742" y="208" fill="#f2a8d8" font-size="14" font-weight="700">POWER STAGE</text>
-    <text x="742" y="246" fill="#f5eefd" font-size="22" font-weight="700">MOC3021 + BTA12</text>
-    <text x="742" y="278" fill="#b8aabc" font-size="16">Optically isolated control</text>
-    <text x="742" y="304" fill="#b8aabc" font-size="16">AC load modulation stage</text>
-    <text x="742" y="330" fill="#b8aabc" font-size="16">Proteus design evidence</text>
-    <rect x="1010" y="185" width="150" height="158" rx="20" fill="#17111e" stroke="#60476d"/>
-    <text x="1034" y="228" fill="#c8a4ff" font-size="14" font-weight="700">OUTPUT</text>
-    <text x="1034" y="266" fill="#f5eefd" font-size="22" font-weight="700">Pump</text>
-    <text x="1034" y="298" fill="#b8aabc" font-size="16">Water flow</text>
-    <text x="1034" y="324" fill="#b8aabc" font-size="16">→ Sprinkler</text>
-    <rect x="365" y="448" width="270" height="108" rx="18" fill="#100b15" stroke="#4a3754"/>
-    <text x="392" y="486" fill="#f2a8d8" font-size="14" font-weight="700">REMOTE INTERFACE</text>
-    <text x="392" y="520" fill="#f5eefd" font-size="20" font-weight="700">Phone / Tablet</text>
-    <text x="392" y="544" fill="#b8aabc" font-size="15">Live variables + control setpoints</text>
-  </g>
-  <line x1="285" y1="264" x2="365" y2="264" stroke="url(#accent)" stroke-width="5" marker-end="url(#arrow)" filter="url(#glow)"/>
-  <line x1="625" y1="264" x2="705" y2="264" stroke="url(#accent)" stroke-width="5" marker-end="url(#arrow)" filter="url(#glow)"/>
-  <line x1="965" y1="264" x2="1000" y2="264" stroke="url(#accent)" stroke-width="5" marker-end="url(#arrow)" filter="url(#glow)"/>
-  <path d="M500 365 V437" stroke="#f2a8d8" stroke-width="4" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
-  <path d="M535 448 V376" stroke="#c8a4ff" stroke-width="4" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
-  <text x="647" y="242" fill="#d7cadb" font-family="ui-monospace,monospace" font-size="13">isolated drive</text>
-  <text x="465" y="414" fill="#d7cadb" font-family="ui-monospace,monospace" font-size="13">Wi-Fi / IoT</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" role="img" aria-labelledby="irr-title irr-desc">
+<title id="irr-title">IoT irrigation control architecture</title>
+<desc id="irr-desc">A capacitive soil moisture sensor feeds an ESP32-class controller. The controller drives an optoisolated MOC3021 and BTA12 TRIAC power stage for an AC pump, while an IoT interface exposes process variables and setpoints to a phone or tablet.</desc>
+<style>
+.bg{fill:#0b0910}.zone{fill:#f4f0f5;fill-opacity:.025;stroke:#f4f0f5;stroke-opacity:.10;stroke-width:.8}.mask{fill:#0b0910}.z,.tag,.edge{font:500 9px ui-monospace,monospace;letter-spacing:.12em}.z{fill:#817887}.tag{fill:#e7a2cf}.name{fill:#f4f0f5;font:600 14px system-ui,sans-serif}.sub{fill:#b5adb9;font:400 10.5px ui-monospace,monospace}.node{fill:#121018;stroke:#f4f0f5;stroke-opacity:.24}.focal{fill:#e7a2cf;fill-opacity:.09;stroke:#e7a2cf}.power{fill:#f4f0f5;fill-opacity:.035;stroke:#b5adb9;stroke-opacity:.5}.wire{fill:none;stroke:#b5adb9;stroke-width:1.2}.wireA{fill:none;stroke:#e7a2cf;stroke-width:1.4}.dash{fill:none;stroke:#817887;stroke-width:1;stroke-dasharray:4 3}.edge{fill:#817887}.step{opacity:0;transform:translateY(7px);animation:r .48s cubic-bezier(.2,.8,.2,1) forwards}.s1{animation-delay:.06s}.s2{animation-delay:.16s}.s3{animation-delay:.26s}.s4{animation-delay:.36s}.s5{animation-delay:.46s}.line{stroke-dasharray:1;stroke-dashoffset:1;animation:d .65s ease forwards}.l1{animation-delay:.18s}.l2{animation-delay:.30s}.l3{animation-delay:.42s}.l4{animation-delay:.54s}@keyframes r{to{opacity:1;transform:none}}@keyframes d{to{stroke-dashoffset:0}}@media(prefers-reduced-motion:reduce){.step{opacity:1;transform:none;animation:none}.line{stroke-dasharray:none;stroke-dashoffset:0;animation:none}}
+</style>
+<defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#f4f0f5" fill-opacity=".12"/></pattern><marker id="a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 8 3 0 6Z" fill="#b5adb9"/></marker><marker id="aa" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 8 3 0 6Z" fill="#e7a2cf"/></marker></defs>
+<rect class="bg" width="1000" height="500"/><rect width="1000" height="500" fill="url(#dots)" opacity=".45"/>
+<text x="40" y="42" class="z">ARCHITECTURE · CYBER-PHYSICAL CONTROL</text><text x="40" y="76" fill="#f4f0f5" font-family="Georgia,serif" font-size="28">IoT irrigation and AC pump control</text><line x1="40" y1="98" x2="960" y2="98" stroke="#f4f0f5" stroke-opacity=".12"/>
+<rect x="40" y="128" width="508" height="266" rx="8" class="zone"/><rect x="60" y="124" width="94" height="16" class="mask"/><text x="107" y="136" text-anchor="middle" class="z">LOW VOLTAGE</text>
+<rect x="574" y="128" width="386" height="266" rx="8" class="zone"/><rect x="594" y="124" width="88" height="16" class="mask"/><text x="638" y="136" text-anchor="middle" class="z">AC POWER</text>
+<path pathLength="1" class="wire line l1" d="M216 250 H286" marker-end="url(#a)"/><path pathLength="1" class="wireA line l2" d="M472 250 H608" marker-end="url(#aa)"/><path pathLength="1" class="wire line l3" d="M736 250 H786" marker-end="url(#a)"/><path pathLength="1" class="wire line l4" d="M894 250 H936" marker-end="url(#a)"/><path pathLength="1" class="dash line l2" d="M380 196 V164 H250 Q238 164 238 176 V190" marker-end="url(#a)"/>
+<text x="226" y="236" class="edge">MOISTURE</text><text x="500" y="236" class="tag">GATE COMMAND</text><text x="744" y="236" class="edge">TRIGGER</text><text x="897" y="236" class="edge">AC LOAD</text><text x="258" y="154" class="edge">WI-FI · VARIABLES / SETPOINTS</text>
+<g class="step s1"><rect x="70" y="206" width="146" height="88" rx="6" class="node"/><text x="82" y="224" class="tag">SENSOR</text><text x="143" y="254" text-anchor="middle" class="name">Soil moisture</text><text x="143" y="274" text-anchor="middle" class="sub">capacitive probe</text></g>
+<g class="step s2"><rect x="286" y="190" width="186" height="116" rx="6" class="focal"/><text x="298" y="208" class="tag">CONTROL</text><text x="379" y="242" text-anchor="middle" class="name">ESP32-class MCU</text><text x="379" y="263" text-anchor="middle" class="sub">moisture logic · IoT</text><text x="379" y="282" text-anchor="middle" class="sub">remote process variables</text></g>
+<g class="step s2"><rect x="160" y="318" width="166" height="64" rx="6" class="node"/><text x="172" y="336" class="tag">REMOTE HMI</text><text x="243" y="360" text-anchor="middle" class="name">Phone / tablet</text><text x="243" y="377" text-anchor="middle" class="sub">monitor + setpoints</text></g>
+<g class="step s3"><rect x="608" y="206" width="128" height="88" rx="6" class="power"/><text x="620" y="224" class="tag">ISOLATION</text><text x="672" y="254" text-anchor="middle" class="name">MOC3021</text><text x="672" y="274" text-anchor="middle" class="sub">opto-triac driver</text></g>
+<g class="step s4"><rect x="786" y="206" width="108" height="88" rx="6" class="power"/><text x="798" y="224" class="tag">SWITCH</text><text x="840" y="254" text-anchor="middle" class="name">BTA12</text><text x="840" y="274" text-anchor="middle" class="sub">TRIAC stage</text></g>
+<g class="step s5"><rect x="936" y="206" width="56" height="88" rx="6" class="node"/><text x="964" y="244" text-anchor="middle" class="name">Pump</text><text x="964" y="266" text-anchor="middle" class="sub">AC</text></g>
+<line x1="40" y1="426" x2="960" y2="426" stroke="#f4f0f5" stroke-opacity=".12"/><text x="40" y="452" class="z">CONTROL LOOP</text><text x="138" y="452" fill="#b5adb9" font-family="system-ui,sans-serif" font-size="10">sense → decide → isolate → switch → irrigate · remote telemetry in parallel</text>
 </svg>
