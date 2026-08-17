@@ -1,0 +1,66 @@
+:root{
+  --bg:#05080f;
+  --panel:#0a1220;
+  --panel2:#0d1727;
+  --ink:#eef5ff;
+  --muted:#899ab2;
+  --soft:#cbd8ea;
+  --border:#1e2f4b;
+  --violet:#8fb7ff;
+  --pink:#70a8ff;
+}
+
+body{
+  background:
+    radial-gradient(circle at 15% 10%,rgba(73,116,190,.12),transparent 31%),
+    radial-gradient(circle at 90% 30%,rgba(39,81,145,.09),transparent 28%),
+    linear-gradient(180deg,#04070c,#060b14 55%,#05080f);
+}
+.ambient.a{background:#315d9f;opacity:.10;animation:none}
+.ambient.b{background:#173e79;opacity:.10;animation:none}
+.site-head{border-color:rgba(31,49,77,.75)}
+.brand span,.eyebrow,.case-link,.experience-link,.credential-type{color:#87b2ff}
+
+.primary{background:linear-gradient(135deg,#a8c8ff,#6fa2f4);color:#07111f}
+.secondary{background:#08111d;border-color:#243955}
+.secondary:hover{border-color:#45699e;background:#0c1929}
+
+.stat{border-color:#213551;background:rgba(8,17,30,.90)}
+.stat:hover{border-color:#446894}
+.case-card,.backlog-card,.experience-card,.credential-card{border-color:#20334f;background:linear-gradient(180deg,#0b1422,#07101b)}
+.case-card:hover,.backlog-card:hover,.experience-card:hover,.credential-card:hover{border-color:#466b9d;box-shadow:0 24px 60px rgba(0,0,0,.26)}
+.case-visual{border-color:#20334f;background:#06101a}
+.tag{border-color:#29466d;color:#c9d9ed;background:#07111e}
+.tag:hover{border-color:#4f78ae}
+.status,.credential-issuer{color:#9dbfff}
+
+.experience-track{color:#7f91aa}
+.experience-track i{background:linear-gradient(90deg,rgba(92,136,204,.14),rgba(113,169,255,.72),rgba(92,136,204,.14))}
+.experience-track i::after{background:#76aaff;box-shadow:0 0 16px rgba(84,143,235,.55);animation:none}
+.experience-number{background:linear-gradient(135deg,rgba(105,157,238,.17),rgba(50,91,153,.10));border-color:#365781;color:#9cc0ff}
+.experience-type{color:#8eb7ff}
+.experience-bullets li{border-color:rgba(36,57,86,.8);background:rgba(6,14,25,.78)}
+.experience-bullets li::before{color:#79adff}
+
+.credential-card::after{background:radial-gradient(circle,rgba(111,166,255,.14),rgba(53,93,158,.08),transparent 68%)}
+.credential-foot{border-color:rgba(33,53,81,.76)}
+.credential-verify{color:#9fc2ff}
+.credential-verify:hover{color:#d4e4ff}
+
+.dialog-card{background:#06101b;border-color:#2c4770;box-shadow:0 30px 90px rgba(0,0,0,.56)}
+dialog::backdrop{background:rgba(2,6,12,.82)}
+.dialog-card::-webkit-scrollbar-track{background:#050a12}
+.dialog-card::-webkit-scrollbar-thumb{background:#31527d;border-color:#050a12}
+.close,.media-close{background:#0a1625;border-color:#2a456b}
+.close:hover{background:#10213a}
+.role-note{border-left-color:#75a9fb;background:rgba(88,145,232,.055)}
+.result{border-color:#2f4d76;background:rgba(77,129,211,.07)}
+.diagram{border-color:#263e60;background:#050c15}
+.project-shot{border-color:#233955;background:#07111e}
+.project-shot:hover{border-color:#4b73a7}
+.flow-step{border-color:#213650;background:#07111e}
+.flow-step span{color:#7eaffb}
+.media-frame img,.media-close{border-color:#365983}
+
+/* Keep the portfolio lightweight: interactions only, no ambient/continuous loops. */
+.reveal{transition-duration:.35s,.4s}
