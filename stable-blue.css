@@ -1,52 +1,95 @@
 :root{
-  --violet:#9db8ff;
-  --violet-2:#6576d8;
-  --pink:#c7a0ff;
-  --ice:#bfe3ff;
-  --border:#2d3348;
-  --border-bright:#52658f;
+  --bg:#05080f;
+  --bg-2:#07101a;
+  --panel:#0a1220;
+  --panel-2:#0d1727;
+  --panel-3:#122039;
+  --ink:#eef5ff;
+  --soft:#cbd8ea;
+  --muted:#8798b0;
+  --border:#1d2d48;
+  --border-bright:#45699e;
+  --violet:#8fb7ff;
+  --violet-2:#567fce;
+  --pink:#70a8ff;
+  --ice:#c8e7ff;
+  --silver:#dce7f5;
 }
 
-/* Stable hybrid palette: original purple Nocturne with the midnight-blue accents. */
+/* Stable midnight-blue Nocturne. No continuous animation loops. */
+html{background:#05080f}
 body{
   background:
-    radial-gradient(circle at 82% 8%,rgba(90,122,210,.08),transparent 30%),
-    radial-gradient(circle at 14% 92%,rgba(129,92,180,.08),transparent 30%),
-    linear-gradient(180deg,#06070b 0%,#090812 52%,#07070c 100%);
+    radial-gradient(circle at 82% 8%,rgba(75,116,190,.13),transparent 31%),
+    radial-gradient(circle at 12% 90%,rgba(37,83,150,.11),transparent 30%),
+    linear-gradient(180deg,#04070c 0%,#060b14 52%,#05080f 100%);
+  color:var(--ink);
   overflow-x:hidden;
   overflow-y:auto;
 }
+body:before{opacity:.11;background-image:linear-gradient(rgba(155,190,240,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(155,190,240,.018) 1px,transparent 1px)}
 
-.ambient-a{background:#536db4;opacity:.12}
-.ambient-b{background:#765097;opacity:.11}
+.ambient-a{background:#244f96;opacity:.13}
+.ambient-b{background:#163c75;opacity:.11}
 
+.sidebar{border-color:var(--border);background:rgba(4,8,15,.91)}
 .brand-mark{
-  border-color:#53698f;
-  background:radial-gradient(circle at 30% 25%,#edf5ff 0 2%,#7897da 11%,#1b294b 43%,#070910 74%);
-  box-shadow:inset 0 0 18px rgba(255,255,255,.08),0 0 28px rgba(94,126,205,.14);
+  border-color:#3b5d91;
+  background:radial-gradient(circle at 30% 25%,#f5fbff 0 2%,#89adf0 10%,#1d3158 43%,#060a12 74%);
+  box-shadow:inset 0 0 18px rgba(255,255,255,.09),0 0 26px rgba(68,113,196,.16);
 }
+.current-path{border-color:var(--border);background:linear-gradient(135deg,rgba(91,139,224,.10),rgba(24,57,108,.055))}
+.tiny-label{color:#667891}
+.eyebrow,.kicker{color:#8fb7ff}
 
-.eyebrow,.kicker{color:#9db8ff}
+.nav-item{color:#9aaac0}
+.nav-item span{color:#70829c}
+.nav-item:hover{background:rgba(101,147,220,.055);color:#eef5ff}
 .nav-item.active{
-  background:linear-gradient(90deg,rgba(113,145,225,.15),rgba(160,112,210,.055));
-  border-color:#3c4b6a;
-  box-shadow:inset 2px 0 0 #8fb0ff;
+  color:#fff;
+  background:linear-gradient(90deg,rgba(100,151,236,.17),rgba(37,74,132,.07));
+  border-color:#304968;
+  box-shadow:inset 2px 0 0 #8fb7ff;
 }
-.nav-item.active span{color:#9db8ff}
-.current-path{background:linear-gradient(135deg,rgba(105,136,211,.09),rgba(139,86,165,.035))}
-.capacity span,.lesson-dot.done{background:linear-gradient(90deg,#809fff,#ba91e6)}
-.accent-btn{border-color:#7d9fe8;background:linear-gradient(180deg,#bfd2ff,#93b0f0);color:#101625;box-shadow:0 8px 24px rgba(92,126,210,.13)}
-.pill:before{color:#8fb0ff}
-.progress-ring{background:conic-gradient(#8fb0ff var(--progress,0%),#20243a 0);box-shadow:0 0 32px rgba(111,145,225,.08)}
-.task input:checked,.course-check input:checked{background:linear-gradient(180deg,#9db8ff,#b493e4);border-color:#9db8ff}
-.deliverable strong,.course-resource,.case-link{color:#9db8ff}
+.nav-item.active span{color:#9fc0ff}
+.capacity{background:#0a1423;border-color:#1c2d47}
+.capacity span,.lesson-dot.done{background:linear-gradient(90deg,#79a7ff,#4d79c8)}
 
-/* Performance guardrails: no continuous page-level animation loops. */
-.ambient-a,.ambient-b,.brand-mark,.view.active,.course-step.complete,.music-dock.open{
-  animation:none!important;
-}
+.topbar{background:rgba(4,8,15,.81);border-color:rgba(29,45,72,.88)}
+.ghost-btn,.small-btn,.icon-btn{background:#09121f;color:#c4d2e5;border-color:#233753}
+.ghost-btn:hover,.small-btn:hover,.icon-btn:hover{border-color:#45699e;background:#0d1a2c;color:#fff}
+.accent-btn{border-color:#86adf4;background:linear-gradient(180deg,#c7dbff,#89aff4);color:#0a1425;box-shadow:0 8px 24px rgba(55,105,190,.16)}
+.mobile-menu{background:#0a1220;border-color:#263a59}
+
+.card,.course-step{background:linear-gradient(180deg,rgba(10,19,33,.96),rgba(6,12,22,.97));border-color:var(--border)}
+.hero-main:before{color:rgba(136,178,245,.055)}
+.hero-main:after{border-color:rgba(114,158,230,.13);box-shadow:0 0 0 28px rgba(85,133,211,.03),0 0 0 64px rgba(73,115,182,.02)}
+.hero h2 span{background:linear-gradient(90deg,#fff,#cfe1ff 50%,#8eb7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{color:#b5c5da}
+.pill{border-color:#263b59;background:rgba(99,144,214,.035);color:#aebed2}
+.pill:before{color:#86b0ff}
+.progress-ring{background:conic-gradient(#83adff var(--progress,0%),#101d30 0);box-shadow:0 0 34px rgba(77,124,204,.12)}
+.progress-ring:after{background:#08111d;border-color:#1d304b}
+.stat{background:#07101b;border-color:#1e304a}
+
+.phase-badge{border-color:#2d486d;color:#c4d7f5;background:rgba(86,130,203,.08)}
+.task{border-color:rgba(29,45,72,.72)}
+.task input,.course-check input{border-color:#3e5c87;background:#07101a}
+.task input:checked,.course-check input:checked{background:linear-gradient(180deg,#9fc0ff,#5f8fe0);border-color:#8fb7ff}
+.task input:checked:after,.course-check input:checked:after{color:#06101f}
+.deliverable{background:rgba(72,117,190,.055);border-color:#213653}
+.deliverable strong,.course-resource,.case-link{color:#8fb7ff}
+
+.phase-mini{background:#07101b;border-color:#1d2d48}
+.phase-mini.active{border-color:#3d5d8d;background:linear-gradient(180deg,rgba(84,132,210,.10),rgba(8,16,28,.96))}
+.course-num{border-color:#35537e;color:#c7daf8;background:#07101a}
+.course-step.complete{border-color:#3e6091}
+.course-step.complete .course-num{background:linear-gradient(145deg,#cfe1ff,#77a3ee);color:#071322}
+.course-resource{border-color:#2b466b;background:#081526}
+
+.music-dock{background:#07101b;border-color:#2b4366;box-shadow:0 30px 80px rgba(0,0,0,.52)}
+.music-form input{background:#050b13;border-color:#233a5b;color:#eaf3ff}
 
 /* Keep interaction feedback lightweight and GPU-friendly. */
-button,.nav-item,.card,.course-step,.course-resource,.cal-event{
-  will-change:auto!important;
-}
+.ambient-a,.ambient-b,.brand-mark,.view.active,.course-step.complete,.music-dock.open{animation:none!important}
+button,.nav-item,.card,.course-step,.course-resource,.cal-event{will-change:auto!important}
