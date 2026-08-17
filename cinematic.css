@@ -1,0 +1,202 @@
+/*
+ * Nocturne cinematic landing layout.
+ * Goal: full-screen atmospheric entry first; utility dashboard below; navigation lives in an off-canvas drawer.
+ */
+
+html,body{overflow-x:hidden}
+body{cursor:auto!important}
+body.custom-cursor,body.custom-cursor a,body.custom-cursor button,body.custom-cursor input,body.custom-cursor label{cursor:auto!important}
+.nocturne-cursor,.nocturne-cursor-dot,.cursor-ripple{display:none!important}
+
+/* --- App shell: content first, navigation on demand --- */
+.app-shell{display:block!important;min-height:100vh}
+.main{width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+
+.sidebar{
+  position:fixed!important;
+  inset:0 auto 0 0!important;
+  width:min(342px,88vw)!important;
+  height:100dvh!important;
+  z-index:6000!important;
+  transform:translate3d(-104%,0,0);
+  transition:transform .42s cubic-bezier(.16,1,.3,1),box-shadow .42s ease!important;
+  pointer-events:none;
+  overflow-y:auto;
+  box-shadow:none!important;
+}
+body.nav-open{overflow:hidden}
+body.nav-open .sidebar{
+  transform:translate3d(0,0,0);
+  pointer-events:auto;
+  box-shadow:28px 0 90px rgba(0,0,0,.54)!important;
+}
+.drawer-scrim{
+  position:fixed;inset:0;z-index:5900;
+  background:rgba(1,3,7,.62);
+  backdrop-filter:blur(7px);
+  opacity:0;pointer-events:none;
+  transition:opacity .32s ease;
+}
+body.nav-open .drawer-scrim{opacity:1;pointer-events:auto}
+
+/* Floating utility bar, closer to a studio-site nav than a dashboard header. */
+.topbar{
+  position:fixed!important;
+  top:0!important;left:0!important;right:0!important;
+  z-index:4000!important;
+  height:78px!important;
+  padding:14px clamp(18px,3vw,46px)!important;
+  background:linear-gradient(180deg,rgba(3,6,10,.82),rgba(3,6,10,.32) 72%,transparent)!important;
+  border:0!important;
+  backdrop-filter:blur(9px)!important;
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+}
+.topbar>div:nth-child(2){display:none!important}
+.mobile-menu{
+  display:inline-flex!important;align-items:center;gap:10px;
+  width:auto!important;min-width:108px!important;height:48px!important;
+  padding:0 17px!important;
+  border:1px solid rgba(163,190,242,.24)!important;
+  background:rgba(6,11,19,.68)!important;
+  color:#dfe9fb!important;
+  font-family:var(--g-body)!important;font-size:13px!important;font-weight:800!important;
+  letter-spacing:.035em;text-transform:uppercase;
+  backdrop-filter:blur(16px);
+}
+.mobile-menu:hover{background:rgba(11,19,31,.90)!important;border-color:rgba(159,189,248,.43)!important;transform:translateY(-1px)}
+.mobile-menu .menu-orb{
+  width:17px;height:17px;border-radius:50%;display:block;flex:none;
+  background:radial-gradient(circle at 30% 25%,#f2f7ff 0 3%,#8eaee9 8%,#2f497c 24%,#101a2f 48%,#020407 76%);
+  border:1px solid rgba(173,202,255,.35);
+  box-shadow:0 0 14px rgba(111,151,229,.28),inset -3px -4px 5px rgba(0,0,0,.48);
+  animation:menu-orb 4.2s ease-in-out infinite;
+}
+@keyframes menu-orb{50%{transform:translateY(-2px);box-shadow:0 0 20px rgba(111,151,229,.38),inset -3px -4px 5px rgba(0,0,0,.48)}}
+.top-actions{gap:8px!important}
+.top-actions .ghost-btn,.top-actions .accent-btn{min-height:46px!important;background:rgba(6,11,19,.58)!important;backdrop-filter:blur(16px)}
+.top-actions .accent-btn{background:linear-gradient(135deg,#b8cdff,#7592d5)!important}
+
+/* --- Cinematic first screen --- */
+#dashboard{padding:0 0 96px!important;max-width:none!important;width:100%!important}
+.cinematic-hero{
+  position:relative;
+  width:100%;min-height:100svh;
+  display:grid;place-items:center;
+  overflow:hidden;
+  isolation:isolate;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(48,72,125,.16),transparent 27%),
+    radial-gradient(circle at 50% 60%,rgba(13,24,47,.45),transparent 48%),
+    linear-gradient(180deg,#020406 0%,#04070c 52%,#060a11 100%);
+}
+.cinematic-hero:before{
+  content:"";position:absolute;inset:0;z-index:-5;opacity:.18;
+  background-image:
+    linear-gradient(rgba(148,177,233,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(148,177,233,.025) 1px,transparent 1px);
+  background-size:54px 54px;
+  mask-image:radial-gradient(circle at 50% 46%,black,transparent 72%);
+}
+.cinematic-hero:after{
+  content:"";position:absolute;inset:-20%;z-index:-4;pointer-events:none;
+  background:
+    conic-gradient(from 190deg at 50% 50%,transparent 0 37%,rgba(132,165,232,.035) 40%,transparent 43% 100%);
+  animation:slow-turn 26s linear infinite;
+}
+@keyframes slow-turn{to{transform:rotate(360deg)}}
+
+.cinematic-orb-wrap{
+  position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);
+  width:min(38vw,470px);aspect-ratio:1;z-index:-1;
+  display:grid;place-items:center;
+  animation:hero-drift 7s ease-in-out infinite;
+}
+.cinematic-orb{
+  width:43%;aspect-ratio:1;border-radius:50%;position:relative;
+  background:
+    radial-gradient(circle at 31% 24%,#f4f8ff 0 1.7%,#a6c0f4 3%,#536fa8 8%,#1c2b4b 20%,#090f1a 44%,#020305 72%);
+  border:1px solid rgba(167,198,255,.36);
+  box-shadow:
+    inset -24px -28px 38px rgba(0,0,0,.72),
+    inset 13px 12px 30px rgba(184,210,255,.11),
+    0 0 50px rgba(105,143,215,.20),
+    0 0 150px rgba(43,72,132,.14);
+}
+.cinematic-orb:before,.cinematic-orb:after{content:"";position:absolute;border-radius:50%;inset:-38%;border:1px solid rgba(125,159,224,.12)}
+.cinematic-orb:after{inset:-78%;border-color:rgba(125,159,224,.07)}
+.orbit-line{position:absolute;inset:4%;border-radius:50%;border:1px solid rgba(144,177,238,.09);transform:rotate(66deg) scaleY(.44);animation:orbit-breathe 6s ease-in-out infinite}
+.orbit-line.two{inset:-12%;transform:rotate(-34deg) scaleY(.34);animation-delay:-2.2s}
+@keyframes hero-drift{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-50%) translateY(-14px)}}
+@keyframes orbit-breathe{50%{opacity:.42;transform:rotate(72deg) scaleY(.48)}}
+
+.cinematic-copy{
+  position:relative;z-index:4;text-align:center;
+  width:min(1120px,90vw);padding:100px 20px 120px;
+}
+.cinematic-kicker{
+  display:block;margin-bottom:28px;
+  font:600 11px/1.4 var(--g-mono);letter-spacing:.22em;text-transform:uppercase;color:#8faee9;
+  opacity:0;animation:cinematic-up .8s .1s var(--g-ease) forwards;
+}
+.cinematic-title{
+  margin:0 auto;
+  font-family:var(--g-serif);font-size:clamp(70px,12vw,174px);font-weight:700;
+  line-height:.76;letter-spacing:-.035em;text-transform:uppercase;color:#eef4ff;
+  text-shadow:0 0 42px rgba(90,123,188,.11);
+}
+.cinematic-title span{display:block;opacity:0;transform:translateY(30px);filter:blur(7px);animation:cinematic-word .95s var(--g-ease) forwards}
+.cinematic-title span:nth-child(1){animation-delay:.18s}.cinematic-title span:nth-child(2){animation-delay:.32s;color:#879fcc}
+.cinematic-subtitle{
+  max-width:670px;margin:38px auto 0;color:#b9c5d7;font-size:clamp(16px,1.6vw,20px);font-weight:700;line-height:1.65;
+  opacity:0;animation:cinematic-up .8s .55s var(--g-ease) forwards;
+}
+.cinematic-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:31px;opacity:0;animation:cinematic-up .8s .72s var(--g-ease) forwards}
+.cinematic-actions button{
+  min-height:48px;padding:0 19px;border-radius:999px;border:1px solid rgba(164,193,247,.27);
+  background:rgba(7,12,20,.68);color:#dfe9f8;font-family:var(--g-body);font-size:13px;font-weight:800;
+  transition:transform .24s ease,border-color .24s ease,background .24s ease;
+}
+.cinematic-actions button:hover{transform:translateY(-2px);background:#0b1422;border-color:rgba(164,193,247,.48)}
+.cinematic-actions .enter-roadmap{background:#d8e5ff;color:#07101c;border-color:#d8e5ff}
+.cinematic-scroll{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:5;
+  display:flex;align-items:center;gap:10px;color:#728198;font:600 9px var(--g-mono);letter-spacing:.17em;text-transform:uppercase;
+}
+.cinematic-scroll:before{content:"";width:42px;height:1px;background:linear-gradient(90deg,transparent,#7894c8);animation:scroll-line 2s ease-in-out infinite}
+@keyframes scroll-line{50%{width:68px;opacity:.48}}
+@keyframes cinematic-word{to{opacity:1;transform:none;filter:none}}
+@keyframes cinematic-up{to{opacity:1;transform:none}}
+
+/* Existing dashboard becomes the second chapter below the cinematic entry. */
+#dashboard> :not(.cinematic-hero){width:min(1380px,calc(100% - clamp(34px,6vw,108px)));margin-left:auto;margin-right:auto}
+#dashboard>.hero{margin-top:86px}
+#dashboard>.section-head{margin-top:66px}
+#dashboard>.phase-timeline{margin-bottom:20px}
+
+/* Other app views remain focused content pages, now full-width without the fixed left rail. */
+.view:not(#dashboard){
+  width:min(1380px,calc(100% - clamp(32px,6vw,100px)))!important;
+  max-width:1380px!important;margin:0 auto!important;padding:118px 0 90px!important;
+}
+
+/* Scroll reveal: subtle, not a constant GPU-heavy pointer effect. */
+.cinematic-reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--g-ease),transform .7s var(--g-ease)}
+.cinematic-reveal.is-visible{opacity:1;transform:none}
+
+@media(max-width:820px){
+  .topbar{height:72px!important;padding:11px 14px!important}
+  .mobile-menu{min-width:94px!important;height:44px!important;padding:0 14px!important}
+  .top-actions #jumpToday{display:none!important}
+  .top-actions .ghost-btn,.top-actions .accent-btn{font-size:11px!important;padding:0 11px!important;min-height:42px!important}
+  .cinematic-copy{padding-top:88px}
+  .cinematic-title{font-size:clamp(62px,19vw,112px);line-height:.8}
+  .cinematic-orb-wrap{width:82vw;top:45%}
+  #dashboard> :not(.cinematic-hero){width:calc(100% - 28px)}
+  .view:not(#dashboard){width:calc(100% - 28px)!important;padding-top:96px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cinematic-hero:after,.cinematic-orb-wrap,.orbit-line,.mobile-menu .menu-orb,.cinematic-scroll:before{animation:none!important}
+  .cinematic-kicker,.cinematic-title span,.cinematic-subtitle,.cinematic-actions{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}
+  .cinematic-reveal{opacity:1!important;transform:none!important;transition:none!important}
+}
