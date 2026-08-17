@@ -1,0 +1,23 @@
+:root{
+  --bg:#05080f!important;
+  --panel:#081321!important;
+  --panel2:#0b1828!important;
+  --ink:#eef5ff!important;
+  --muted:#8799b2!important;
+  --soft:#cbd8ea!important;
+  --border:#1d314c!important;
+  --violet:#7eacff!important;
+  --pink:#659fff!important;
+}
+body{background:radial-gradient(circle at 15% 10%,rgba(64,111,184,.12),transparent 31%),radial-gradient(circle at 90% 30%,rgba(31,71,126,.08),transparent 28%),linear-gradient(180deg,#04070c,#060b14 55%,#05080f)!important}
+.ambient.a{background:#315d9f!important;opacity:.09!important}.ambient.b{background:#173e79!important;opacity:.08!important}.site-head{border-bottom-color:#1d314b!important}.brand span,.eyebrow,.case-link,.experience-link,.credential-type{color:#82b2ff!important}
+.primary{background:linear-gradient(135deg,#b8d3ff,#79aaf5)!important;color:#07111f!important}.secondary{background:#081421!important;border-color:#243e5d!important}.secondary:hover{background:#0d1d30!important;border-color:#4a75a6!important}
+.stat{background:rgba(7,17,30,.92)!important;border-color:#213753!important}.stat:hover{border-color:#466f9d!important}
+.case-card,.backlog-card,.experience-card,.credential-card{background:linear-gradient(180deg,#0a1625,#07111d)!important;border-color:#203650!important}.case-card:hover,.backlog-card:hover,.experience-card:hover,.credential-card:hover{border-color:#4772a4!important}.case-visual{background:#06101b!important;border-bottom-color:#203650!important}.tag{background:#07131f!important;border-color:#2a486a!important;color:#c3d3e6!important}.tag:hover{border-color:#517eb0!important}.status,.credential-issuer{color:#96bcff!important}
+.experience-track{color:#7d91ad!important}.experience-track i{background:linear-gradient(90deg,rgba(79,132,211,.13),rgba(111,169,255,.74),rgba(79,132,211,.13))!important}.experience-track i::after{background:#77aaff!important;box-shadow:0 0 16px rgba(91,150,240,.52)!important;animation:none!important}.experience-number{background:linear-gradient(135deg,rgba(98,155,241,.18),rgba(42,81,139,.10))!important;border-color:#365b85!important;color:#9cc1ff!important}.experience-type{color:#8cb7ff!important}.experience-bullets li{border-color:#243e5d!important;background:#07131f!important;color:#adc0d7!important}.experience-bullets li::before{color:#7daeff!important}.experience-link{color:#86b4ff!important}.experience-link:hover{color:#d5e5ff!important}
+.credential-card::after{background:radial-gradient(circle,rgba(103,162,255,.14),rgba(43,81,140,.08),transparent 68%)!important}.credential-type{color:#83b3ff!important}.credential-issuer{color:#9bbfff!important}.credential-note{color:#96a8bf!important}.credential-foot{border-top-color:#203650!important}.credential-focus{color:#b8c9db!important}.credential-verify{color:#9dc2ff!important}.credential-verify:hover{color:#d8e7ff!important}
+.dialog-card{background:#06101b!important;border-color:#2b4a70!important}.dialog-card::-webkit-scrollbar-track{background:#040a12!important}.dialog-card::-webkit-scrollbar-thumb{background:#315783!important;border-color:#040a12!important}.close,.media-close{background:#0a1727!important;border-color:#2c4c73!important}.close:hover{background:#10243b!important}.role-note{border-left-color:#78abff!important;background:rgba(80,139,229,.06)!important}.result{border-color:#31517a!important;background:rgba(71,126,211,.08)!important}.diagram-wrap{background:#050d17!important}.diagram{background:#050d17!important;border-color:#264362!important}.project-shot{background:#07131f!important;border-color:#233d5a!important}.project-shot:hover{border-color:#4e78a9!important}.flow-step{background:#07131f!important;border-color:#213a56!important}.flow-step span{color:#80b1ff!important}.media-frame img,.media-close{border-color:#365d89!important}
+.section-head p,.summary,.case-card p,.backlog-card p{color:#899bb4!important}.headline{color:#cad8e9!important}.case-meta{color:#7f91aa!important}
+footer{border-top-color:#213650!important;color:#8194ad!important}
+/* Remove the last purple/pink hue from every decorative treatment. */
+.role-note,.result,.case-card,.experience-card,.credential-card,.backlog-card,.stat{box-shadow:none!important}
