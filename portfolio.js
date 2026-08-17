@@ -9,7 +9,7 @@
   $('#stats').innerHTML = `
     <article class="stat reveal"><strong>${D.caseStudies.length}</strong><span>VERIFIED CASE STUDIES</span></article>
     <article class="stat reveal"><strong>${D.experience?.length || 0}</strong><span>NETWORKING LABS DOCUMENTED</span></article>
-    <article class="stat reveal"><strong>${D.backlog.length}</strong><span>PROJECTS IN PIPELINE</span></article>
+    <article class="stat reveal"><strong>${D.credentials?.length || 0}</strong><span>COURSES / TRAINING VERIFIED</span></article>
     <article class="stat reveal"><strong>OT</strong><span>PRIMARY SPECIALIZATION PATH</span></article>`;
 
   const experienceGrid = $('#experienceGrid');
@@ -40,6 +40,24 @@
         <div class="case-link">Open technical case study →</div>
       </div>
     </article>`).join('');
+
+  const credentialsGrid = $('#credentialsGrid');
+  if (credentialsGrid && Array.isArray(D.credentials)) {
+    credentialsGrid.innerHTML = D.credentials.map((c,i) => `
+      <article class="credential-card reveal" style="--delay:${i*65}ms">
+        <div class="credential-top">
+          <span class="credential-type">${esc(c.type)}</span>
+          <span class="credential-date">${esc(c.date)}</span>
+        </div>
+        <h3>${esc(c.title)}</h3>
+        <p class="credential-issuer">${esc(c.issuer)}</p>
+        <p class="credential-note">${esc(c.note)}</p>
+        <div class="credential-foot">
+          <span class="credential-focus">${esc(c.focus)}</span>
+          ${c.verifyUrl ? `<a class="credential-verify" href="${esc(c.verifyUrl)}" target="_blank" rel="noopener">${esc(c.verifyLabel || 'Verify ↗')}</a>` : '<span class="credential-noverify">Certificate on file</span>'}
+        </div>
+      </article>`).join('');
+  }
 
   $('#backlogGrid').innerHTML = D.backlog.map((p,i) => `
     <article class="backlog-card reveal" style="--delay:${i*60}ms"><h3>${esc(p.title)}</h3><p>${esc(p.area)}</p><span class="status">${esc(p.status)}</span></article>`).join('');
