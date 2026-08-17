@@ -2,32 +2,27 @@
 <title id="eye-title">Raspberry Pi eye-tracking system architecture</title>
 <desc id="eye-desc">A GC0308 camera feeds an OpenCV pupil tracking pipeline on a Raspberry Pi 4B. Smoothed gaze coordinates travel by UDP to a laptop keyboard application, and feedback returns to the Raspberry Pi and OLED.</desc>
 <style>
-  .bg{fill:#0b0910}.dots{fill:url(#dots);opacity:.45}.zone{fill:#f4f0f5;fill-opacity:.025;stroke:#f4f0f5;stroke-opacity:.10;stroke-width:.8}.mask{fill:#0b0910}.zlabel,.tag,.edge{font:500 9px ui-monospace,monospace;letter-spacing:.12em}.zlabel{fill:#817887}.tag{fill:#e7a2cf}.name{fill:#f4f0f5;font:600 15px system-ui,sans-serif}.sub{fill:#b5adb9;font:400 11px ui-monospace,monospace}.node{fill:#121018;stroke:#f4f0f5;stroke-opacity:.24}.focal{fill:#e7a2cf;fill-opacity:.09;stroke:#e7a2cf}.muted{fill:#f4f0f5;fill-opacity:.025;stroke:#b5adb9;stroke-opacity:.5}.wire{fill:none;stroke:#b5adb9;stroke-width:1.2}.wire-accent{fill:none;stroke:#e7a2cf;stroke-width:1.35}.return{fill:none;stroke:#817887;stroke-width:1;stroke-dasharray:4 3}.edge{fill:#817887}.accent-edge{fill:#e7a2cf}.legend{fill:#b5adb9;font:400 10px system-ui,sans-serif}.step{opacity:0;transform:translateY(7px);animation:rise .48s cubic-bezier(.2,.8,.2,1) forwards}.s1{animation-delay:.08s}.s2{animation-delay:.18s}.s3{animation-delay:.30s}.s4{animation-delay:.42s}.line{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .65s ease forwards}.l1{animation-delay:.18s}.l2{animation-delay:.34s}.l3{animation-delay:.5s}@keyframes rise{to{opacity:1;transform:none}}@keyframes draw{to{stroke-dashoffset:0}}@media(prefers-reduced-motion:reduce){.step{opacity:1;transform:none;animation:none}.line{stroke-dasharray:none;stroke-dashoffset:0;animation:none}}
+  .bg{fill:#050a12}.dots{fill:url(#dots);opacity:.45}.zone{fill:#eef5ff;fill-opacity:.025;stroke:#eef5ff;stroke-opacity:.10;stroke-width:.8}.mask{fill:#050a12}.zlabel,.tag,.edge{font:500 9px ui-monospace,monospace;letter-spacing:.12em}.zlabel{fill:#7186a3}.tag{fill:#72a8ff}.name{fill:#eef5ff;font:600 15px system-ui,sans-serif}.sub{fill:#9aaec8;font:400 11px ui-monospace,monospace}.node{fill:#091522;stroke:#eef5ff;stroke-opacity:.24}.focal{fill:#72a8ff;fill-opacity:.09;stroke:#72a8ff}.muted{fill:#eef5ff;fill-opacity:.025;stroke:#9aaec8;stroke-opacity:.5}.wire{fill:none;stroke:#9aaec8;stroke-width:1.2}.wire-accent{fill:none;stroke:#72a8ff;stroke-width:1.35}.return{fill:none;stroke:#7186a3;stroke-width:1;stroke-dasharray:4 3}.edge{fill:#7186a3}.accent-edge{fill:#72a8ff}.legend{fill:#9aaec8;font:400 10px system-ui,sans-serif}.step{opacity:0;transform:translateY(7px);animation:rise .48s cubic-bezier(.2,.8,.2,1) forwards}.s1{animation-delay:.08s}.s2{animation-delay:.18s}.s3{animation-delay:.30s}.s4{animation-delay:.42s}.line{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .65s ease forwards}.l1{animation-delay:.18s}.l2{animation-delay:.34s}.l3{animation-delay:.5s}@keyframes rise{to{opacity:1;transform:none}}@keyframes draw{to{stroke-dashoffset:0}}@media(prefers-reduced-motion:reduce){.step{opacity:1;transform:none;animation:none}.line{stroke-dasharray:none;stroke-dashoffset:0;animation:none}}
 </style>
 <defs>
- <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#f4f0f5" fill-opacity=".12"/></pattern>
- <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 8 3 0 6Z" fill="#b5adb9"/></marker>
- <marker id="arrA" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 8 3 0 6Z" fill="#e7a2cf"/></marker>
+ <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#eef5ff" fill-opacity=".12"/></pattern>
+ <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 8 3 0 6Z" fill="#9aaec8"/></marker>
+ <marker id="arrA" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0 8 3 0 6Z" fill="#72a8ff"/></marker>
 </defs>
 <rect class="bg" width="1000" height="500"/><rect class="dots" width="1000" height="500"/>
 <text x="40" y="42" class="zlabel">ARCHITECTURE · EMBEDDED COMPUTER VISION</text>
-<text x="40" y="76" fill="#f4f0f5" font-family="Georgia,serif" font-size="28">Raspberry Pi eye-tracking writing system</text>
-<line x1="40" y1="98" x2="960" y2="98" stroke="#f4f0f5" stroke-opacity=".12"/>
-
+<text x="40" y="76" fill="#eef5ff" font-family="Georgia,serif" font-size="28">Raspberry Pi eye-tracking writing system</text>
+<line x1="40" y1="98" x2="960" y2="98" stroke="#eef5ff" stroke-opacity=".12"/>
 <rect x="36" y="126" width="584" height="266" rx="8" class="zone"/><rect x="60" y="122" width="74" height="16" class="mask"/><text x="97" y="134" text-anchor="middle" class="zlabel">WEARABLE</text>
 <rect x="648" y="126" width="316" height="266" rx="8" class="zone"/><rect x="674" y="122" width="54" height="16" class="mask"/><text x="701" y="134" text-anchor="middle" class="zlabel">HOST</text>
-
 <path pathLength="1" class="wire line l1" d="M214 258 H282" marker-end="url(#arr)"/>
 <path pathLength="1" class="wire-accent line l2" d="M500 238 H692" marker-end="url(#arrA)"/>
 <path pathLength="1" class="return line l3" d="M692 294 H558 Q548 294 548 304 V340 H500" marker-end="url(#arr)"/>
 <path pathLength="1" class="wire line l3" d="M390 300 V332" marker-end="url(#arr)"/>
-
 <text x="242" y="246" class="edge">USB VIDEO</text><text x="574" y="226" class="accent-edge edge">UDP :5005 · GAZE X/Y</text><text x="566" y="286" class="edge">UDP :5006 · FEEDBACK</text>
-
 <g class="step s1"><rect x="72" y="214" width="142" height="88" rx="6" class="muted"/><text x="84" y="232" class="tag">INPUT</text><text x="143" y="260" text-anchor="middle" class="name">GC0308 camera</text><text x="143" y="279" text-anchor="middle" class="sub">eye image stream</text></g>
 <g class="step s2"><rect x="282" y="190" width="218" height="112" rx="6" class="focal"/><text x="294" y="208" class="tag">FOCAL · COMPUTE</text><text x="391" y="242" text-anchor="middle" class="name">Raspberry Pi 4B</text><text x="391" y="262" text-anchor="middle" class="sub">OpenCV · pupil detection</text><text x="391" y="280" text-anchor="middle" class="sub">smoothing · Kalman fallback</text></g>
 <g class="step s4"><rect x="322" y="332" width="136" height="62" rx="6" class="node"/><text x="334" y="350" class="tag">HMI</text><text x="390" y="373" text-anchor="middle" class="name">SSD1306 OLED</text><text x="390" y="388" text-anchor="middle" class="sub">letter / word state</text></g>
 <g class="step s3"><rect x="692" y="198" width="222" height="112" rx="6" class="node"/><text x="704" y="216" class="tag">APPLICATION</text><text x="803" y="246" text-anchor="middle" class="name">Laptop keyboard app</text><text x="803" y="266" text-anchor="middle" class="sub">calibration · selection</text><text x="803" y="284" text-anchor="middle" class="sub">visual interaction layer</text></g>
-
-<line x1="40" y1="426" x2="960" y2="426" stroke="#f4f0f5" stroke-opacity=".12"/><text x="40" y="452" class="zlabel">FLOW</text><text x="104" y="452" class="legend">capture → detect → smooth → transmit → interact → return feedback</text>
+<line x1="40" y1="426" x2="960" y2="426" stroke="#eef5ff" stroke-opacity=".12"/><text x="40" y="452" class="zlabel">FLOW</text><text x="104" y="452" class="legend">capture → detect → smooth → transmit → interact → return feedback</text>
 </svg>
