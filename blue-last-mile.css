@@ -1,0 +1,6 @@
+:root{--green:#86b7ff;--amber:#a7c8ff;--danger:#ff9da7}
+::selection{background:#2f5f9f;color:#fff}
+.status,.status-line .status{color:#9fc3ff!important}
+.beginner-expect,.beginner-stuck{border-color:#31547a!important;background:rgba(72,126,208,.055)!important}.beginner-expect strong,.beginner-stuck strong{color:#bcd8ff!important}
+.pass-box,.proof-box{border-color:#294867!important;background:rgba(70,124,204,.055)!important;color:#c6d5e7!important}.pass-box strong,.proof-box strong{color:#8db9ff!important}
+.verified,.verified-badge,[class*="verified"]{border-color:#355d86!important;color:#b8d3f8!important;background-color:rgba(73,128,210,.07)!important}
