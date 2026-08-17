@@ -5,7 +5,7 @@ A public learning roadmap, technical portfolio and evidence system for a mechatr
 ## Live sites
 
 - **Professional portfolio:** https://natequan.github.io/ot-cyber-roadmap/portfolio.html
-- **Interactive learning roadmap:** https://natequan.github.io/ot-cyber-roadmap/
+- **Interactive learning roadmap:** https://natequan.github.io/ot-cyber-roadmap/index.html
 
 ## What this repository contains
 
