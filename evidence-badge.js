@@ -3,6 +3,10 @@
     'Read your own network': {
       label: 'Evidence archived · Week 01 Day 02',
       href: 'https://github.com/Natequan/ot-cyber-roadmap/blob/main/progress/week-01/day-02-read-your-own-network.md'
+    },
+    'See packets in Wireshark': {
+      label: 'Evidence archived · Week 01 Day 03',
+      href: 'https://github.com/Natequan/ot-cyber-roadmap/blob/main/progress/week-01/day-03-see-packets-in-wireshark.md'
     }
   };
 
