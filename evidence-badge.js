@@ -7,23 +7,38 @@
     'See packets in Wireshark': {
       label: 'Evidence archived · Week 01 Day 03',
       href: 'https://github.com/Natequan/ot-cyber-roadmap/blob/main/progress/week-01/day-03-see-packets-in-wireshark.md'
+    },
+    'Build a tiny Python tool': {
+      label: 'Evidence archived · Week 01 Day 04',
+      href: 'https://github.com/Natequan/ot-cyber-roadmap/blob/main/progress/week-01/day-04-build-a-tiny-python-tool.md',
+      autoComplete: true
     }
   };
 
   const apply = () => {
     const study = document.querySelector('#study');
     if (!study || !study.classList.contains('active')) return;
-    study.querySelectorAll('.course-step').forEach(step => {
+
+    for (const step of study.querySelectorAll('.course-step')) {
       const title = step.querySelector('h3')?.textContent.trim();
       const item = verified[title];
-      if (!item || step.querySelector('.evidence-archive-row')) return;
+      if (!item) continue;
+
+      const checkbox = step.querySelector('.course-check input[type="checkbox"]');
+      if (item.autoComplete && checkbox && !checkbox.checked) {
+        checkbox.checked = true;
+        checkbox.dispatchEvent(new Event('change', {bubbles:true}));
+        return;
+      }
+
+      if (step.querySelector('.evidence-archive-row')) continue;
       const body = step.querySelector('.course-step-body');
-      if (!body) return;
+      if (!body) continue;
       const row = document.createElement('div');
       row.className = 'evidence-archive-row';
       row.innerHTML = `<a class="evidence-archive-chip" href="${item.href}" target="_blank" rel="noopener">${item.label} ↗</a>`;
       body.appendChild(row);
-    });
+    }
   };
 
   document.addEventListener('click', event => {
