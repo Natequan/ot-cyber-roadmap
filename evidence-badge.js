@@ -12,6 +12,16 @@
       label: 'Evidence archived · Week 01 Day 04',
       href: 'https://github.com/Natequan/ot-cyber-roadmap/blob/main/progress/week-01/day-04-build-a-tiny-python-tool.md',
       autoComplete: true
+    },
+    'Collect the Schneider lab facts': {
+      label: 'Evidence archived · Week 01 Day 05',
+      href: 'https://github.com/Natequan/ot-cyber-roadmap/blob/main/progress/week-01/day-05-collect-schneider-lab-facts.md',
+      autoComplete: true
+    },
+    'Package the week': {
+      label: 'Week 01 packaged · Day 06',
+      href: 'https://github.com/Natequan/ot-cyber-roadmap/blob/main/progress/week-01/day-06-package-the-week.md',
+      autoComplete: true
     }
   };
 
