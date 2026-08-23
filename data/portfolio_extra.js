@@ -53,11 +53,11 @@
       date: '2026-08-21',
       title: 'Wireshark, Node-RED & ARP Security Workshop',
       type: 'University Cybersecurity & IoT Workshop · Guided session',
-      short: 'Participated in a university workshop connecting packet inspection, Node-RED / Siemens S7 integration and a controlled Python-based ARP-poisoning demonstration.',
+      short: 'Participated in a university workshop connecting packet inspection, live Node-RED / Siemens S7 PLC integration and a controlled Python-based ARP-poisoning demonstration.',
       skills: ['Wireshark','Node-RED','Siemens S7','ISO-on-TCP','ARP','Python','OT / IoT security'],
       bullets: [
         'Used Wireshark in a guided lab context to inspect network traffic and connect packet-level behavior to ARP and local-network fundamentals.',
-        'Worked with Node-RED and node-red-contrib-s7 to define S7 input/output nodes for PLC bit M0.0 over ISO-on-TCP; the captured flow remained offline with a transport timeout, so it is documented as troubleshooting evidence rather than a successful PLC exchange.',
+        'Configured Node-RED with node-red-contrib-s7 for PLC bit M0.0 over ISO-on-TCP and successfully tested the live PLC connection during an instructor-guided exercise; the supplied screenshot captures a separate transport-timeout state encountered during setup/troubleshooting.',
         'Observed a controlled Python-based ARP-poisoning demonstration in an authorized classroom environment and connected the behavior to man-in-the-middle risk and defensive packet analysis.'
       ],
       source: 'portfolio/experience/cybersecurity-iot-workshop-2026-08-21.md'
