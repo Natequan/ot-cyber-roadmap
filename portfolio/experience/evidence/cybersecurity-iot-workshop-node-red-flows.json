@@ -1,0 +1,145 @@
+[
+    {
+        "id": "e2c96c7f82ee3290",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "adda267123beb1db",
+        "type": "s7 in",
+        "z": "e2c96c7f82ee3290",
+        "endpoint": "022074ceac0550ee",
+        "mode": "single",
+        "variable": "estado",
+        "diff": true,
+        "name": "",
+        "x": 210,
+        "y": 340,
+        "wires": [
+            [
+                "969196f3c1b24062"
+            ]
+        ]
+    },
+    {
+        "id": "969196f3c1b24062",
+        "type": "debug",
+        "z": "e2c96c7f82ee3290",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "0da1d8c2ce943f7d",
+        "type": "s7 out",
+        "z": "e2c96c7f82ee3290",
+        "endpoint": "022074ceac0550ee",
+        "variable": "estado",
+        "name": "",
+        "x": 450,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "5495ad75db081fa6",
+        "type": "inject",
+        "z": "e2c96c7f82ee3290",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "0da1d8c2ce943f7d"
+            ]
+        ]
+    },
+    {
+        "id": "fc11b2fea41565d6",
+        "type": "inject",
+        "z": "e2c96c7f82ee3290",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 210,
+        "y": 460,
+        "wires": [
+            [
+                "0da1d8c2ce943f7d"
+            ]
+        ]
+    },
+    {
+        "id": "022074ceac0550ee",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.0.10",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": 2,
+        "cycletime": 1000,
+        "timeout": 2000,
+        "name": "",
+        "vartable": [
+            {
+                "addr": "M0.0",
+                "name": "estado"
+            }
+        ]
+    },
+    {
+        "id": "c918b5aa21bcee88",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-s7": "3.1.3"
+        }
+    }
+]
