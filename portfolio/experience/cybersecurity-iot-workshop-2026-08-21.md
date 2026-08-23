@@ -2,13 +2,13 @@
 
 **Type:** University cybersecurity / IoT workshop  
 **Date:** 21 August 2026  
-**Scope:** Guided technical session covering packet inspection, Node-RED integration with Siemens S7 nodes, and a controlled Python-based ARP-poisoning demonstration.
+**Scope:** Guided technical session covering packet inspection, live Node-RED integration with a Siemens S7 PLC, and a controlled Python-based ARP-poisoning demonstration.
 
 ## Why this belongs in the portfolio
 
 This entry is documented as **technical experience**, not as a standalone security project. The session connected networking fundamentals already practiced in university labs with packet-level inspection, PLC/IoT tooling and the security implications of ARP manipulation.
 
-The goal of this page is to preserve what was actually practiced and observed without overstating the result. In particular, the supplied Node-RED evidence shows a configured Siemens S7 flow, but the captured runtime state was offline with a transport timeout. That is recorded as troubleshooting evidence rather than a successful PLC communication claim.
+The Node-RED flow was successfully connected to the PLC during a live instructor-guided exercise at the front of the classroom. No screenshot was taken at the moment of the successful test. The supplied screenshot instead captures a separate point in the session where the S7 nodes were offline and reporting a transport timeout, so both the successful live test and the troubleshooting state are documented distinctly.
 
 ---
 
@@ -29,7 +29,7 @@ No `.pcap` file was supplied with this portfolio update, so this entry does not 
 
 ## 2. Node-RED + Siemens S7 integration
 
-A Node-RED flow was created using `node-red-contrib-s7` version `3.1.3`.
+A Node-RED flow was created using `node-red-contrib-s7` version `3.1.3` and tested against a PLC during the workshop.
 
 ### Verified configuration from the exported flow
 
@@ -49,11 +49,13 @@ The exported flow is preserved here:
 
 [`cybersecurity-iot-workshop-node-red-flows.json`](./evidence/cybersecurity-iot-workshop-node-red-flows.json)
 
-### Troubleshooting result
+### Live result and troubleshooting
 
-The session screenshot showed the S7 nodes in an **offline** state and the Node-RED debug panel repeatedly reported a transport connection timeout. Because of that, the portfolio describes this as **configuration + troubleshooting experience**, not as a validated PLC read/write exchange.
+The Node-RED ↔ PLC communication was successfully tested during a live instructor-guided exercise. The available screenshot does not show that successful moment because the test was performed at the front of the classroom and no screenshot was taken there.
 
-That distinction is useful professionally: understanding how to represent failed communication honestly is part of engineering evidence, especially when future work will involve OT and industrial-network troubleshooting.
+A separate screenshot from the session shows the S7 nodes in an **offline** state and the Node-RED debug panel reporting a transport connection timeout. That image is kept as troubleshooting evidence rather than treated as the final result of the exercise.
+
+This is useful professional evidence because it shows both sides of industrial communication work: configuring and validating a live connection, and recognizing / troubleshooting a failed transport state.
 
 ---
 
@@ -96,7 +98,7 @@ Wireshark packet inspection
             ↓
 Node-RED ↔ Siemens S7 / PLC integration
             ↓
-Communication troubleshooting
+Live PLC validation + communication troubleshooting
             ↓
 ARP abuse / MITM security concepts
             ↓
@@ -108,6 +110,7 @@ It strengthens the transition from basic networking toward OT / ICS security bec
 ## Evidence boundaries
 
 - The Node-RED exported flow is committed as reproducible configuration evidence.
-- The captured Node-RED state showed a transport timeout, so successful S7 communication is **not** claimed.
+- Successful live Node-RED ↔ PLC communication was achieved during an instructor-guided classroom test; there is no screenshot of the successful moment.
+- The supplied screenshot documents a separate transport-timeout state encountered during the session and is retained as troubleshooting evidence.
 - Wireshark participation is documented from the workshop description, but no PCAP was supplied.
 - ARP poisoning is documented as a guided, authorized university demonstration; no attack script is published or attributed as independently developed.
