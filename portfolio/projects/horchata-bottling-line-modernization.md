@@ -1,7 +1,11 @@
 # Horchata Bottling Line Modernization — Siemens S7-1200, Operator Interface & Cap Feeding
 
 **Context:** Systems Mechatronics final project, UNITEC, Q3 2026  
-**Attribution:** Group university project. Gabriel Nathan Altamirano is listed among the project participants in the submitted September 2026 final company-handover report. The report does not assign specific components to each individual; accordingly, the contribution is described as **team participation**.
+**Attribution:** Group university project. Gabriel Nathan Altamirano is listed among the project participants in the submitted September 2026 final company-handover report. Gabriel clarified his own participation in the team work: **designing a mechanism to stabilize the bottles during the bottling process and guide caps down onto the bottles before closing**. Other outcomes described below belong to the team as a whole; individual authorship of the PLC recovery or Python HMI is not claimed.
+
+## Gabriel's specific contribution (self-reported)
+
+Gabriel participated in the mechanical design of a bottle-positioning/retention concept intended to prevent bottle displacement during operation, alongside a cap-guiding/dispensing mechanism that brings caps to bottle mouths for the subsequent closing stage. The project was collaborative. This description is based on Gabriel's clarification, whereas the remaining engineering results are drawn from the submitted team report. **Do not claim a production-validated holding mechanism**: the submitted report documents limitations to complete-line verification.
 
 ## Engineering objective
 Improve an existing horchata bottling machine through a recoverable PLC project, editable cycle timing, a browser-based operator interface and a mechanically feasible cap-delivery mechanism.
