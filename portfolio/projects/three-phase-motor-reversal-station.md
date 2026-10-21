@@ -1,7 +1,11 @@
 # Timed Three-Phase Motor Reversal — Electrical Training Station
 
 **Context:** University practical station / electrical control documentation  
-**Attribution:** Documentation and demonstration evidence supplied for portfolio review. The report does not identify the report author or confirm a specific individual component assignment. Described conservatively as a documented training-station practice rather than sole design authorship.
+**Attribution:** Documentation and demonstration evidence supplied for portfolio review. The report does not identify the report author or confirm a specific individual component assignment. Gabriel confirmed personally participating in wiring/connecting the training station and performing functional tests. He reports that the circuit operated successfully. The report does not establish individual authorship of the initial schematic.
+
+## Gabriel's specific contribution (self-reported)
+
+Gabriel personally connected/wired the station and participated in its operational test. He confirmed that its commanded operation functioned as expected, **but no voltage or current measurements were performed in that practical test**. Therefore, we report a successful qualitative functional test, not instrument-verified electrical performance.
 
 ## Objective
 Document an industrial-control teaching station for **timed reversal of a three-phase motor** using a power circuit, a separate low-voltage/command circuit, interlocked contactors, pushbuttons, a timer and pilot lamps.
@@ -16,7 +20,7 @@ Document an industrial-control teaching station for **timed reversal of a three-
 ## Evidence and limitations
 The report includes a photographed demonstration of the physical training panel, wiring/power-and-command diagrams, a component inventory and a reproducible lab procedure.
 
-The report explicitly warns that motor voltage/current/power, overload settings and exact timer delay cannot be reliably read from the presentation video. It also notes that a nearby VFD appears in footage but is **not documented as part of this reversing circuit**. Therefore, those details are not fabricated or claimed as measured results.
+The report explicitly warns that motor voltage/current/power, overload settings and exact timer delay cannot be reliably read from the presentation video. It also notes that a nearby VFD appears in footage but is **not documented as part of this reversing circuit**. Gabriel additionally confirmed functional operation of the connected station without electrical measurements. Therefore, neither motor voltage/current/power nor measured timing performance is fabricated.
 
 ## Professional value
 Industrial electrical schematics · power/control separation · contactor logic · reversing starters · time-delay relays · overload and emergency-stop safety · methodical verification.
